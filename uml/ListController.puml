@@ -1,0 +1,7 @@
+@startuml
+class ListController{
+    +FXML TextField listName
+    +FXML Button addListButton
+    +addListHandler()
+}
+@enduml

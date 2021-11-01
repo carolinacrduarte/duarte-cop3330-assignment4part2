@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.SampleListController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #808080;">
+         <children>
+            <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #FFA500;">
+               <children>
+                  <Label layoutX="64.0" layoutY="13.0" text="SCHOOL ASSIGNMENTS:" textAlignment="CENTER" textFill="#fdfdfd">
+                     <font>
+                        <Font name="Impact" size="35.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@baseline_list_alt_white_24dp.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Label layoutX="22.0" layoutY="367.0" text="Add new task." textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="14.0" layoutY="117.0" mnemonicParsing="false" text="OOP Assignment 4" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="14.0" layoutY="221.0" mnemonicParsing="false" text="Heat Transfer CH 11 Reading" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="14.0" layoutY="168.0" mnemonicParsing="false" text="Fluid Mechanics CH 12 Reading" textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="14.0" layoutY="271.0" mnemonicParsing="false" text="Senior Design Report " textFill="WHITE">
+               <font>
+                  <Font name="Impact" size="18.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="348.0" layoutY="367.0" text="Remove task." textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="517.0" layoutY="367.0" text="Delete list." textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="193.0" layoutY="367.0" text="Edit task." textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="423.0" layoutY="80.0" text="Mark once completed:" textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="523.0" layoutY="116.0" mnemonicParsing="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="523.0" layoutY="167.0" mnemonicParsing="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="523.0" layoutY="220.0" mnemonicParsing="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="523.0" layoutY="270.0" mnemonicParsing="false">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <ScrollBar layoutX="568.0" layoutY="117.0" orientation="VERTICAL" prefHeight="182.0" prefWidth="14.0" />
+            <MenuButton layoutX="11.0" layoutY="76.0" mnemonicParsing="false" style="-fx-background-color: #808080;" text="Your tasks:" textFill="WHITE">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Incomplete tasks" />
+                <MenuItem mnemonicParsing="false" text="Complete tasks" />
+              </items>
+               <font>
+                  <Font name="Impact" size="14.0" />
+               </font>
+            </MenuButton>
+            <Button layoutX="524.0" layoutY="324.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@baseline_delete_white_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="363.0" layoutY="326.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@baseline_remove_circle_white_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="197.0" layoutY="328.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@baseline_edit_white_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="38.0" layoutY="327.0" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@baseline_add_circle_white_24dp.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

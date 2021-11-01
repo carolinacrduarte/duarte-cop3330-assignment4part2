@@ -1,0 +1,14 @@
+@startuml
+class SampleListsController{
+    +FXML Button addList
+    +FXML Button editList
+    +FXML Button save_exportList
+    +FXML Button importList
+    +Object[] getLists()
+    +initialize()
+    +addListHandler()
+    +LocalList()
+    +save_exportListHandler()
+    +importListHandler()
+}
+@enduml

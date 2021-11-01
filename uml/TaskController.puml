@@ -1,0 +1,9 @@
+@startuml
+class TaskController{
+    +FXML TextField taskName
+    +FXML DatePicker dueDate
+    +FXML TextField taskDescription
+    +FXML Button addTaskButton
+    +addTaskHandler()
+}
+@enduml

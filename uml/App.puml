@@ -1,0 +1,8 @@
+@startuml
+class App{
+    +FXMLLoader fxmlLoader
+    +Scene scene
+    +TaskSerializer()
+    +ListSerializer()
+}
+@enduml

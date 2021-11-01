@@ -1,0 +1,6 @@
+@startuml
+class AddTaskController{
+    +FXML Button addTaskButton
+    +addTaskHandler()
+}
+@enduml

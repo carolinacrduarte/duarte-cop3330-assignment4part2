@@ -1,0 +1,8 @@
+@startuml
+class LocalTask{
+    +String taskName
+    +datePicker dueDate
+    +String taskDescription
+    +TaskView()
+}
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+class LocalList{
+    +String listName
+    +String listDescription
+    +ListView()
+}
+@enduml

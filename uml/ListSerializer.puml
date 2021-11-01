@@ -1,0 +1,9 @@
+@startuml
+class ListSerializer{
+    +DATA_PATH = "list"
+    +DATA_PATH = "lists"
+    +serialize(Object[] lists)
+    +LocalList[] deserialize()
+    +ListSerializer()
+}
+@enduml
