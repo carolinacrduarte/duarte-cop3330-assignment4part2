@@ -5,6 +5,7 @@ package ucf.assignments;
  *  Copyright 2021 Carolina Duarte
  */
 
+//Observation for graders: I left this code in order to test how my FXMl files looked once the app is running.
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

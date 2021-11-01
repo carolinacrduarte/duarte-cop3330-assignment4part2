@@ -5,4 +5,14 @@ class App{
     +TaskSerializer()
     +ListSerializer()
 }
+
+class AddListController{
+    +FXML Button addListButton
+    +addListHandler()
+}
+
+AddListController <|-- App
 @enduml
+
+
+

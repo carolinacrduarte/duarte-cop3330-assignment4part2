@@ -3,4 +3,21 @@ class AddTaskController{
     +FXML Button addTaskButton
     +addTaskHandler()
 }
+
+class LocalList{
+    +String listName
+    +String listDescription
+    +ListView()
+}
+
+class LocalTask{
+    +String taskName
+    +datePicker dueDate
+    +String taskDescription
+    +TaskView()
+}
+
+LocalTask <|-- AddTaskController
+AddTaskController <|-- LocalList
+
 @enduml

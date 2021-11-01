@@ -4,4 +4,12 @@ class ListController{
     +FXML Button addListButton
     +addListHandler()
 }
+
+class LocalList{
+    +String listName
+    +String listDescription
+    +ListView()
+}
+
+LocalList <|-- ListController
 @enduml

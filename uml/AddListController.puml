@@ -3,4 +3,19 @@ class AddListController{
     +FXML Button addListButton
     +addListHandler()
 }
+
+class ListController{
+    +FXML TextField listName
+    +FXML Button addListButton
+    +addListHandler()
+}
+
+class LocalList{
+    +String listName
+    +String listDescription
+    +ListView()
+}
+
+ListController <|-- AddListController
+LocalList <|-- ListController
 @enduml
