@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -10,57 +13,147 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.TaskController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" style="-fx-background-color: #808080;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ucf.assignments.TaskController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #808080;">
+      <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #FFA500;">
          <children>
-            <AnchorPane prefHeight="70.0" prefWidth="600.0" style="-fx-background-color: #FFA500;">
-               <children>
-                  <Label layoutX="64.0" layoutY="13.0" text="YOUR TASK ITEM:" textAlignment="CENTER" textFill="#fdfdfd">
-                     <font>
-                        <Font name="Impact" size="35.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@baseline_list_alt_white_24dp.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <TextField fx:id="taskNameTextField" layoutX="143.0" layoutY="83.0" prefHeight="25.0" prefWidth="243.0" promptText="Ex. Project" />
-            <Label layoutX="14.0" layoutY="84.0" text="Enter task name:" textAlignment="CENTER" textFill="#fdfdfd">
+            <Label layoutX="64.0" layoutY="13.0" text="YOUR TO-DO LIST:" textAlignment="CENTER" textFill="#fdfdfd">
                <font>
-                  <Font name="Impact" size="18.0" />
+                  <Font name="Impact" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="14.0" layoutY="128.0" text="Enter due date:" textAlignment="CENTER" textFill="#fdfdfd">
-               <font>
-                  <Font name="Impact" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="14.0" layoutY="171.0" text="Enter task description:" textAlignment="CENTER" textFill="#fdfdfd">
-               <font>
-                  <Font name="Impact" size="18.0" />
-               </font>
-            </Label>
-            <TextArea fx:id="taskDescriptionTextField" layoutX="192.0" layoutY="171.0" prefHeight="106.0" prefWidth="386.0" promptText="Ex. Project has two parts." />
-            <Label layoutX="259.0" layoutY="345.0" text="Add task." textAlignment="CENTER" textFill="#fdfdfd">
-               <font>
-                  <Font name="Impact" size="18.0" />
-               </font>
-            </Label>
-            <Button layoutX="263.0" layoutY="295.0" mnemonicParsing="false">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@baseline_add_circle_white_24dp.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <DatePicker fx:id="datePicker" layoutX="136.0" layoutY="127.0" />
+            <ImageView fitHeight="56.0" fitWidth="50.0" layoutX="14.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_list_alt_white_24dp.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
+      <ListView fx:id="taskList" layoutX="7.0" layoutY="126.0" prefHeight="224.0" prefWidth="586.0" />
+      <TextField fx:id="nameTextField" layoutX="11.0" layoutY="360.0" prefHeight="25.0" prefWidth="243.0" promptText="Ex. Project" />
+      <DatePicker fx:id="datePicker" layoutX="268.0" layoutY="360.0" />
+      <Button fx:id="addTaskButton" layoutX="478.0" layoutY="372.0" mnemonicParsing="false" onAction="#addTaskEvent">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_add_circle_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextArea fx:id="descriptionTextArea" layoutX="14.0" layoutY="422.0" prefHeight="106.0" prefWidth="386.0" promptText="Ex. Project has two parts." />
+      <Label layoutX="14.0" layoutY="386.0" text="Enter task name" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="268.0" layoutY="386.0" text="Enter due date" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="534.0" text="Enter task description" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="476.0" layoutY="433.0" text="Add task" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <MenuButton layoutX="7.0" layoutY="82.0" mnemonicParsing="false" style="-fx-background-color: #808080;" text="Your tasks:" textFill="WHITE">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Incomplete tasks" />
+            <MenuItem mnemonicParsing="false" text="Complete tasks" />
+         </items>
+         <font>
+            <Font name="Impact" size="14.0" />
+         </font>
+      </MenuButton>
+      <Button layoutX="479.0" layoutY="475.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="58.0">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_remove_circle_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="207.0" layoutY="76.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="21.0">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_done_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="396.0" layoutY="76.0" mnemonicParsing="false">
+         <graphic>
+            <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_pending_actions_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="261.0" layoutY="87.0" text="Mark as complete" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="450.0" layoutY="87.0" text="Mark as incomplete" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="457.0" layoutY="534.0" text="Remove task" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="addTaskButton1" layoutX="271.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_save_alt_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="addTaskButton11" layoutX="66.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_delete_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="addTaskButton111" layoutX="475.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@baseline_publish_white_24dp.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Label layoutX="38.0" layoutY="651.0" text="Delete all tasks" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="242.0" layoutY="651.0" text="Save/Export list" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="463.0" layoutY="651.0" text="Import a list" textAlignment="CENTER" textFill="#fdfdfd">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

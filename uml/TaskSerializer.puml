@@ -1,8 +1,0 @@
-@startuml
-class TaskSerializer{
-    +DATA_PATH = "tasks"
-    +serialize(Object[] tasks)
-    +LocalTask[] deserialize()
-    +TaskSerializer()
-}
-@enduml
