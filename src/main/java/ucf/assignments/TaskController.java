@@ -16,9 +16,9 @@ import javax.swing.*;
 import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 
 public class TaskController implements Initializable {
@@ -92,7 +92,7 @@ public class TaskController implements Initializable {
     public void saveExport() throws IOException {
 
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileOut);
-        String data = String.valueOf(ToDoTasks).replaceAll(", ", "\n").replaceAll("\\[", "").replaceAll("\\[", "").replaceAll("\\]","");
+        String data = String.valueOf(ToDoTasks).replaceAll(", ", "\n").replaceAll(" / ", "\n").replaceAll("\\[", "").replaceAll("\\[", "").replaceAll("\\]","");
 
         outputWriter.write(data);
         outputWriter.close();
@@ -109,9 +109,25 @@ public class TaskController implements Initializable {
     }
 
     public void importEvent() throws IOException {
-        File file = new File("ToDoAppTasks.txt");
-        Scanner inputFile = new Scanner(file);
 
+        BufferedReader reader = new BufferedReader(new FileReader("ToDoAppTasks.txt"));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String task_name;
+            task_name = line.substring(line.indexOf(": ") + 1);
+
+            String temp_due_date;
+            String task_description;
+
+            temp_due_date = line.substring(line.indexOf(": ") + 1);
+            task_description = line.substring(line.indexOf(": ") + 1);
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate due_date = LocalDate.parse(temp_due_date, formatter);
+
+            ToDoTasks.add(new ToDoTask(task_name, due_date, task_description));
+            taskList.setItems(ToDoTasks);
+        }
     }
 
     @FXML public void importEvent(Event e) throws IOException {
@@ -119,7 +135,3 @@ public class TaskController implements Initializable {
     }
 
 }
-
-
-
-
