@@ -1,17 +1,35 @@
 @startuml
 class App{
+    +start(stage)
     +FXMLLoader fxmlLoader
     +Scene scene
-    +TaskSerializer()
-    +ListSerializer()
+    +main(args)
 }
 
-class AddListController{
-    +FXML Button addListButton
-    +addListHandler()
+class TaskController{
+    +FXML TextField nameTextField;
+    +FXML DatePicker datePicker;
+    +FXML TextArea descriptionTextArea;
+    +FXML Button addTaskButton;
+    +FXML Button removeTaskButton;
+    +FXML Button removeAllTasksButton;
+    +FXML Button markCompleteButton;
+    +FXML Button saveExportButton;
+    +FXML Button importButton;
+    +FXML ListView<ToDoTask> taskList;
+    +ObservableList<ToDoTask> ToDoTasks;
+    +FileOutputStream fileOut;
+    +addTaskEvent(Event e);
+    +ToDoTask selUser();
+    +removeTaskEvent(Event e);
+    +removeAllTasksEvent(Event e);
+    +saveExport();
+    +saveExportEvent(Event e);
+    +importEvent();
+    +importEvent(Event e);
 }
 
-AddListController <|-- App
+TaskController <|-- App
 @enduml
 
 

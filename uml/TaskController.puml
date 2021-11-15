@@ -1,18 +1,39 @@
 @startuml
 class TaskController{
-    +FXML TextField taskName
-    +FXML DatePicker dueDate
-    +FXML TextField taskDescription
-    +FXML Button addTaskButton
-    +addTaskHandler()
+    +FXML TextField nameTextField;
+    +FXML DatePicker datePicker;
+    +FXML TextArea descriptionTextArea;
+    +FXML Button addTaskButton;
+    +FXML Button removeTaskButton;
+    +FXML Button removeAllTasksButton;
+    +FXML Button markCompleteButton;
+    +FXML Button saveExportButton;
+    +FXML Button importButton;
+    +FXML ListView<ToDoTask> taskList;
+    +ObservableList<ToDoTask> ToDoTasks;
+    +FileOutputStream fileOut;
+    +addTaskEvent(Event e);
+    +ToDoTask selUser();
+    +removeTaskEvent(Event e);
+    +removeAllTasksEvent(Event e);
+    +saveExport();
+    +saveExportEvent(Event e);
+    +importEvent();
+    +importEvent(Event e);
 }
 
-class LocalTask{
-    +String taskName
-    +datePicker dueDate
-    +String taskDescription
-    +TaskView()
+class ToDoTask {
+   +private String name;
+   +private LocalDate date;
+   +private String description;
+   +String getName();
+   +setName(String name);
+   +LocalDate getDate();
+   +setDate(LocalDate date);
+   +String getDescription();
+   +setDescription(String description);
+   +ToDoTask(String name, LocalDate date, String description);
 }
 
-LocalTask <|-- TaskController
+ToDoTask <|-- TaskController
 @enduml

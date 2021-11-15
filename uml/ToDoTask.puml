@@ -1,27 +1,15 @@
 @startuml
-'https://plantuml.com/class-diagram
-
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
-}
-
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class ToDoTask{
+   +private String name;
+   +private LocalDate date;
+   +private String description;
+   +String getName();
+   +setName(String name);
+   +LocalDate getDate();
+   +setDate(LocalDate date);
+   +String getDescription();
+   +setDescription(String description);
+   +ToDoTask(String name, LocalDate date, String description);
 }
 
 @enduml
