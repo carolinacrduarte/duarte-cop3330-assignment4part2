@@ -131,7 +131,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="addTaskButton111" layoutX="475.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+      <Button fx:id="importButton" layoutX="475.0" layoutY="593.0" mnemonicParsing="false" onAction="#importEvent">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>

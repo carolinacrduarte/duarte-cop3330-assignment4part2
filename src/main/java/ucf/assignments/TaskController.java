@@ -13,14 +13,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import javax.swing.*;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 
 public class TaskController implements Initializable {
@@ -58,6 +56,9 @@ public class TaskController implements Initializable {
     Button saveExportButton;
 
     @FXML
+    Button importButton;
+
+    @FXML
     ListView<ToDoTask> taskList;
 
     static ObservableList<ToDoTask> ToDoTasks = FXCollections.observableArrayList(new ArrayList<>());
@@ -91,7 +92,9 @@ public class TaskController implements Initializable {
     public void saveExport() throws IOException {
 
         OutputStreamWriter outputWriter = new OutputStreamWriter(fileOut);
-        outputWriter.write(String.valueOf(ToDoTasks));
+        String data = String.valueOf(ToDoTasks).replaceAll(", ", "\n").replaceAll("\\[", "").replaceAll("\\[", "").replaceAll("\\]","");
+
+        outputWriter.write(data);
         outputWriter.close();
 
         JOptionPane.showMessageDialog(null,
@@ -103,6 +106,16 @@ public class TaskController implements Initializable {
     @FXML
     public void saveExportEvent(Event e) throws IOException {
         saveExport();
+    }
+
+    public void importEvent() throws IOException {
+        File file = new File("ToDoAppTasks.txt");
+        Scanner inputFile = new Scanner(file);
+
+    }
+
+    @FXML public void importEvent(Event e) throws IOException {
+        importEvent();
     }
 
 }
