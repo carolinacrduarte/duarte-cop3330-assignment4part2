@@ -46,7 +46,7 @@ public class ToDoTask {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Task name: " + this.getName() + " / " + "Due date: " + this.getDate() + " / " + "Task description: " + this.getDescription();
     }
 

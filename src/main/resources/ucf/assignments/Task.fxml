@@ -71,7 +71,7 @@
             <Font name="Impact" size="14.0" />
          </font>
       </MenuButton>
-      <Button layoutX="479.0" layoutY="475.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="58.0">
+      <Button fx:id="removeTaskButton" layoutX="479.0" layoutY="475.0" mnemonicParsing="false" onAction="#removeTaskEvent" prefHeight="50.0" prefWidth="58.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -80,7 +80,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button layoutX="207.0" layoutY="76.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="21.0">
+      <Button fx:id="markCompleteButton" layoutX="207.0" layoutY="76.0" mnemonicParsing="false" onAction="#markCompleteEvent" prefHeight="17.0" prefWidth="21.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -122,7 +122,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="addTaskButton11" layoutX="66.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+      <Button fx:id="removeAllTasksButton" layoutX="66.0" layoutY="593.0" mnemonicParsing="false" onAction="#removeAllTasksEvent">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>

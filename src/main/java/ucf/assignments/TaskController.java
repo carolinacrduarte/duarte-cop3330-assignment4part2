@@ -17,7 +17,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+
 public class TaskController implements Initializable {
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.datePicker = new DatePicker(LocalDate.now());
@@ -36,6 +38,15 @@ public class TaskController implements Initializable {
     Button addTaskButton;
 
     @FXML
+    Button removeTaskButton;
+
+    @FXML
+    Button removeAllTasksButton;
+
+    @FXML
+    Button markCompleteButton;
+
+    @FXML
     ListView<ToDoTask> taskList;
 
     ObservableList<ToDoTask> ToDoTasks = FXCollections.observableArrayList(new ArrayList<>());
@@ -47,5 +58,34 @@ public class TaskController implements Initializable {
         taskList.setItems(ToDoTasks);
 
     }
+
+    private ToDoTask selUser()
+    {
+        return taskList.getSelectionModel().getSelectedItem();
+    }
+
+    @FXML
+    public void removeTaskEvent(Event e) {
+        ToDoTasks.remove(selUser());
+        taskList.setItems(ToDoTasks);
+    }
+
+    @FXML
+    public void removeAllTasksEvent(Event e){
+        taskList.getItems().clear();
+    }
+
+
+    @FXML
+    public void markCompleteEvent(Event e){
+
+        taskList.getSelectionModel().selectedItemProperty();
+
+    }
+
+
 }
+
+
+
 
