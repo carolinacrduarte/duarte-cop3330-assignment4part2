@@ -12,6 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import javax.swing.*;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,6 +24,9 @@ import java.util.ResourceBundle;
 
 
 public class TaskController implements Initializable {
+
+    public TaskController() throws FileNotFoundException {
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,9 +55,14 @@ public class TaskController implements Initializable {
     Button markCompleteButton;
 
     @FXML
+    Button saveExportButton;
+
+    @FXML
     ListView<ToDoTask> taskList;
 
-    ObservableList<ToDoTask> ToDoTasks = FXCollections.observableArrayList(new ArrayList<>());
+    static ObservableList<ToDoTask> ToDoTasks = FXCollections.observableArrayList(new ArrayList<>());
+
+    FileOutputStream fileOut = new FileOutputStream("ToDoAppTasks.txt");
 
     @FXML
     public void addTaskEvent(Event e) {
@@ -75,14 +88,22 @@ public class TaskController implements Initializable {
         taskList.getItems().clear();
     }
 
+    public void saveExport() throws IOException {
 
-    @FXML
-    public void markCompleteEvent(Event e){
+        OutputStreamWriter outputWriter = new OutputStreamWriter(fileOut);
+        outputWriter.write(String.valueOf(ToDoTasks));
+        outputWriter.close();
 
-        taskList.getSelectionModel().selectedItemProperty();
-
+        JOptionPane.showMessageDialog(null,
+                "Your to-do list was saved successfully!",
+                "Save/Export",
+                JOptionPane.WARNING_MESSAGE);
     }
 
+    @FXML
+    public void saveExportEvent(Event e) throws IOException {
+        saveExport();
+    }
 
 }
 

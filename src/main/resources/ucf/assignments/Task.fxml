@@ -80,7 +80,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="markCompleteButton" layoutX="207.0" layoutY="76.0" mnemonicParsing="false" onAction="#markCompleteEvent" prefHeight="17.0" prefWidth="21.0">
+      <Button fx:id="markCompleteButton" layoutX="207.0" layoutY="76.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="21.0">
          <graphic>
             <ImageView fitHeight="42.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -113,7 +113,7 @@
             <Font name="Impact" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="addTaskButton1" layoutX="271.0" layoutY="593.0" mnemonicParsing="false" onAction="#addTaskEvent">
+      <Button fx:id="saveExportButton" layoutX="271.0" layoutY="593.0" mnemonicParsing="false" onAction="#saveExportEvent">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
